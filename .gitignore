@@ -1,0 +1,38 @@
+#    Backup files     #
+#######################
+*~
+*backup
+*.synctex.gz
+
+# LateX Auxilary Files #
+########################
+*.aux
+*.bbl
+*.blg
+*.dvi
+*.log
+*.toc
+*.lof
+*.lot
+*.out
+*.bak
+*.pdf
+*.fdb_latexmk
+*.nav
+*.snm
+*.vrb
+
+# Python Compiled Code #
+########################
+*.pyc
+
+# Eclipse Files #
+#################
+
+*metadata*
+*.project
+*.pydevproject
+
+# Image Files #
+###############
+*pdf

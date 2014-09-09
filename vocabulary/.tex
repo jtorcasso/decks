@@ -1,0 +1,651 @@
+% -*- coding: utf-8 -*-
+\documentclass[12pt]{article}
+\special{papersize=3in,5in}
+\usepackage{amssymb,amsmath}
+\pagestyle{empty}
+\setlength{\parindent}{0in}
+\newenvironment{note}{\paragraph{NOTE:}}{}
+\newenvironment{field}{\paragraph{field:}}{}
+
+\begin{document}
+
+\begin{note}
+\begin{field}
+\textbf{\large #!/usr/bin/env python}
+\end{field}
+\begin{field}
+\textbf{\large #!/usr/bin/env python}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large }
+\end{field}
+\begin{field}
+\textbf{\large }
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large # Standard Library}
+\end{field}
+\begin{field}
+\textbf{\large # Standard Library}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large import sys}
+\end{field}
+\begin{field}
+\textbf{\large import sys}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large }
+\end{field}
+\begin{field}
+\textbf{\large }
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large # Third Party}
+\end{field}
+\begin{field}
+\textbf{\large # Third Party}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large from nltk.corpus import wordnet as wn}
+\end{field}
+\begin{field}
+\textbf{\large from nltk.corpus import wordnet as wn}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large }
+\end{field}
+\begin{field}
+\textbf{\large }
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large def process_words(f):}
+\end{field}
+\begin{field}
+\textbf{\large def process_words(f):}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large words = [w.replace('\n','') for w in f.readlines()]}
+\end{field}
+\begin{field}
+\textbf{\large words = [w.replace('\n','') for w in f.readlines()]}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large words = [w.strip() for w in words]}
+\end{field}
+\begin{field}
+\textbf{\large words = [w.strip() for w in words]}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large }
+\end{field}
+\begin{field}
+\textbf{\large }
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large return words}
+\end{field}
+\begin{field}
+\textbf{\large return words}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large }
+\end{field}
+\begin{field}
+\textbf{\large }
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large def process_synset(synset):}
+\end{field}
+\begin{field}
+\textbf{\large def process_synset(synset):}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large pos = {'n':'noun', 'v':'verb', 'a':'adj', 's':'adj', 'r':'adv'}[synset.pos]}
+\end{field}
+\begin{field}
+\textbf{\large pos = {'n':'noun', 'v':'verb', 'a':'adj', 's':'adj', 'r':'adv'}[synset.pos]}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large }
+\end{field}
+\begin{field}
+\textbf{\large }
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large content = '\\item[{}] \\hfill \\\\ \n'.format(pos)}
+\end{field}
+\begin{field}
+\textbf{\large content = '\\item[{}] \\hfill \\\\ \n'.format(pos)}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large content += synset.definition}
+\end{field}
+\begin{field}
+\textbf{\large content += synset.definition}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large return content + '\n'}
+\end{field}
+\begin{field}
+\textbf{\large return content + '\n'}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large }
+\end{field}
+\begin{field}
+\textbf{\large }
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large def process_note(word):}
+\end{field}
+\begin{field}
+\textbf{\large def process_note(word):}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large formatted = '\\textbf{{\\large {}}}'.format(word)}
+\end{field}
+\begin{field}
+\textbf{\large formatted = '\\textbf{{\\large {}}}'.format(word)}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large synsets = wn.synsets(word)}
+\end{field}
+\begin{field}
+\textbf{\large synsets = wn.synsets(word)}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large content = '\\begin{{field}}\n{}\n\\end{{field}}\n'.format(formatted)}
+\end{field}
+\begin{field}
+\textbf{\large content = '\\begin{{field}}\n{}\n\\end{{field}}\n'.format(formatted)}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large }
+\end{field}
+\begin{field}
+\textbf{\large }
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large defs = []}
+\end{field}
+\begin{field}
+\textbf{\large defs = []}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large for synset in synsets:}
+\end{field}
+\begin{field}
+\textbf{\large for synset in synsets:}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large defs.append(process_synset(synset))}
+\end{field}
+\begin{field}
+\textbf{\large defs.append(process_synset(synset))}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large }
+\end{field}
+\begin{field}
+\textbf{\large }
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large content += '\\begin{{field}}\n{}\n\\begin{{description}}\n{}\n\\end{{description}}\n\\end{{field}}'\}
+\end{field}
+\begin{field}
+\textbf{\large content += '\\begin{{field}}\n{}\n\\begin{{description}}\n{}\n\\end{{description}}\n\\end{{field}}'\}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large .format(formatted, '\n'.join(defs))}
+\end{field}
+\begin{field}
+\textbf{\large .format(formatted, '\n'.join(defs))}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large }
+\end{field}
+\begin{field}
+\textbf{\large }
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large return '\\begin{{note}}\n{}\n\\end{{note}}'.format(content)}
+\end{field}
+\begin{field}
+\textbf{\large return '\\begin{{note}}\n{}\n\\end{{note}}'.format(content)}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large }
+\end{field}
+\begin{field}
+\textbf{\large }
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large tex = r'''% -*- coding: utf-8 -*-}
+\end{field}
+\begin{field}
+\textbf{\large tex = r'''% -*- coding: utf-8 -*-}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large \documentclass[12pt]{article}}
+\end{field}
+\begin{field}
+\textbf{\large \documentclass[12pt]{article}}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large \special{papersize=3in,5in}}
+\end{field}
+\begin{field}
+\textbf{\large \special{papersize=3in,5in}}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large \usepackage{amssymb,amsmath}}
+\end{field}
+\begin{field}
+\textbf{\large \usepackage{amssymb,amsmath}}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large \pagestyle{empty}}
+\end{field}
+\begin{field}
+\textbf{\large \pagestyle{empty}}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large \setlength{\parindent}{0in}}
+\end{field}
+\begin{field}
+\textbf{\large \setlength{\parindent}{0in}}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large \newenvironment{note}{\paragraph{NOTE:}}{}}
+\end{field}
+\begin{field}
+\textbf{\large \newenvironment{note}{\paragraph{NOTE:}}{}}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large \newenvironment{field}{\paragraph{field:}}{}}
+\end{field}
+\begin{field}
+\textbf{\large \newenvironment{field}{\paragraph{field:}}{}}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large }
+\end{field}
+\begin{field}
+\textbf{\large }
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large \begin{document}}
+\end{field}
+\begin{field}
+\textbf{\large \begin{document}}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large }
+\end{field}
+\begin{field}
+\textbf{\large }
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large '''}
+\end{field}
+\begin{field}
+\textbf{\large '''}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large file_ = sys.argv[0]}
+\end{field}
+\begin{field}
+\textbf{\large file_ = sys.argv[0]}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large }
+\end{field}
+\begin{field}
+\textbf{\large }
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large with open(file_, 'rb') as f:}
+\end{field}
+\begin{field}
+\textbf{\large with open(file_, 'rb') as f:}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large words = process_words(f)}
+\end{field}
+\begin{field}
+\textbf{\large words = process_words(f)}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large }
+\end{field}
+\begin{field}
+\textbf{\large }
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large notes = []}
+\end{field}
+\begin{field}
+\textbf{\large notes = []}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large for w in words:}
+\end{field}
+\begin{field}
+\textbf{\large for w in words:}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large notes.append(process_note(w))}
+\end{field}
+\begin{field}
+\textbf{\large notes.append(process_note(w))}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large }
+\end{field}
+\begin{field}
+\textbf{\large }
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large with open(file_.split('.')[0]+'.tex', 'wb') as f:}
+\end{field}
+\begin{field}
+\textbf{\large with open(file_.split('.')[0]+'.tex', 'wb') as f:}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+\begin{note}
+\begin{field}
+\textbf{\large f.write(tex + '\n'.join(notes) + '\n\n\\end{document}')}
+\end{field}
+\begin{field}
+\textbf{\large f.write(tex + '\n'.join(notes) + '\n\n\\end{document}')}
+\begin{description}
+
+\end{description}
+\end{field}
+\end{note}
+
+\end{document}
